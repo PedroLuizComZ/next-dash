@@ -1,4 +1,4 @@
-import { Haeder } from "../../components/Haeder";
+import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
 import {
   Flex,
@@ -11,11 +11,12 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { Input } from "../../components/Form/Input";
+import Link from "next/link";
 
 export default function CreateUser() {
   return (
     <Box>
-      <Haeder />
+      <Header />
 
       <Flex w="100vw" my="6" maxWidth={1480} mx="auto" px="6">
         <Sidebar />
@@ -42,7 +43,9 @@ export default function CreateUser() {
 
           <Flex mt="8" justify="flex-end">
             <HStack spacing="4">
-              <Button colorScheme="whiteAlpha">Cancelar</Button>
+              <Link href="/users" passHref>
+                <Button as="a" colorScheme="whiteAlpha">Cancelar</Button>
+              </Link>
               <Button colorScheme="pink">Salvar</Button>
             </HStack>
           </Flex>
